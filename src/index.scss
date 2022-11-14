@@ -1,0 +1,104 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+$borderColor: #ccc;
+$chatWidth: 700px;
+$chatHeight: 500px;
+$messageBackground: #f1f1f1;
+$messageForeground: white;
+
+.full_screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat_container {
+    border: 1px solid $borderColor;
+    border-radius: 4px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    width: $chatWidth;
+}
+
+.chat_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat_messages {
+    height: $chatHeight;
+    overflow-y: auto;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 10px;
+}
+
+.user_block {
+    padding: 4px 10px;
+    color: $messageForeground;
+    border-radius: 15px;
+}
+
+.block_title {
+    font-size: 10px;
+    color: gray;
+    font-weight: 100;
+}
+
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ripple div {
+    position: absolute;
+    border: 4px solid gray;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+    0% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    4.9% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    5% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
+}
